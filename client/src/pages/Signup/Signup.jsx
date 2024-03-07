@@ -21,7 +21,7 @@ const Signup = () => {
     // console.log(input);
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/users/register",
+        "https://evangadi-mongo-backend.onrender.com/api/users/register",
         input
       );
       console.log(res);

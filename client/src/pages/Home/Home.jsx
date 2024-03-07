@@ -19,7 +19,7 @@ const Home = () => {
   const AllQuestions = async () => {
     try {
       const questionResponse = await axios.get(
-        "http://localhost:8000/api/questions/allquestions"
+        "https://evangadi-mongo-backend.onrender.com/api/questions/allquestions"
       );
 
       console.log(questionResponse.data);

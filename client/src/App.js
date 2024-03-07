@@ -24,7 +24,7 @@ function App() {
         token = "";
       } else {
         const { data } = await axios.get(
-          "http://localhost:8000/api/users/check",
+          "https://evangadi-mongo-backend.onrender.com/api/users/check",
           {
             headers: {
               Authorization: "Bearer " + token,
