@@ -1,0 +1,40 @@
+.avatar {
+  background-color: darkgray;
+  height: 90px;
+  width: 90px;
+  border-radius: 100%;
+  padding-top: 0px;
+  border: 2px solid #fc8500;
+}
+
+.fa {
+  font-size: 30px;
+  font-weight: bolder;
+  color: #fc8500;
+  cursor: pointer;
+}
+
+.fa:hover {
+  color: #000;
+}
+
+.question-link:hover {
+  color: #fc8500;
+}
+
+.q-fs {
+  font-size: large;
+  font-weight: bold;
+  color: #516cf0;
+}
+
+.q-fs:hover {
+  color: #fc8500;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.username-text {
+  color: #fc8500;
+  text-transform: capitalize;
+}

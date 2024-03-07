@@ -1,0 +1,53 @@
+.footer-wrapper {
+  min-width: 500px;
+  background-color: #3b455a;
+  padding-left: 30px;
+}
+.useful-link {
+  border: 1px solid #3b455a;
+}
+.icon {
+  width: 400px;
+  padding-top: 10px;
+}
+.icon > a {
+  margin-right: 40px;
+  color: white;
+}
+.logo {
+  padding-top: 40px;
+}
+
+.useful-link > a {
+  display: flex;
+  flex-direction: column;
+  color: rgba(213, 213, 213, 0.6);
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.useful-link > a:hover {
+  text-decoration: underline;
+  color: white;
+  transition: all 0.4s ease;
+}
+.title {
+  padding-top: 35px;
+  color: white;
+}
+.contact-info > p {
+  display: flex;
+  flex-direction: column;
+  color: rgba(213, 213, 213, 0.6);
+}
+.contact-info {
+  padding-bottom: 50px;
+}
+
+.footer-links {
+  margin-top: -60px !important;
+}
+.footer-copyright {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}

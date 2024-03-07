@@ -1,0 +1,31 @@
+.home-page-container {
+  min-height: 65vh;
+  min-width: 500px;
+}
+
+.question-btn {
+  width: 275px;
+  height: 41px;
+  background-color: #516cf0;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.question-btn:hover {
+  background-color: #ff8500;
+}
+.question-btn:active {
+  border: 3px solid #516cf0;
+}
+
+.welcome {
+  color: #516cf0;
+}
+
+.username {
+  color: #ff8500;
+}
