@@ -24,7 +24,7 @@ const AskQuestion = () => {
       await axios.post(
         "https://evangadi-mongo-backend.onrender.com/api/questions/askquestion",
         {
-          userid: userData.user?.id,
+          userid: userData.user?._id,
           title: askInput.title,
           description: askInput.description,
           tag: askInput.tag,
