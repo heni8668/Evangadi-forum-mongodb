@@ -21,12 +21,15 @@ const AskQuestion = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/api/questions/askquestion", {
-        userid: userData.user?.id,
-        title: askInput.title,
-        description: askInput.description,
-        tag: askInput.tag,
-      });
+      await axios.post(
+        "https://evangadi-mongo-backend.onrender.com/api/questions/askquestion",
+        {
+          userid: userData.user?.id,
+          title: askInput.title,
+          description: askInput.description,
+          tag: askInput.tag,
+        }
+      );
       navigate("/");
     } catch (error) {
       console.log("something went wrong", error);
