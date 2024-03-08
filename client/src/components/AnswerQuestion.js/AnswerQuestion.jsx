@@ -18,7 +18,7 @@ const AnswerQuestion = ({ id }) => {
     e.preventDefault();
     try {
       await axios.post(
-        `https://evangadi-mongo-backend.onrender.com//api/answers/addanswer`,
+        `https://evangadi-mongo-backend.onrender.com/api/answers/addanswer`,
         {
           userid: userData.user?.id,
           questionid: params.id,
