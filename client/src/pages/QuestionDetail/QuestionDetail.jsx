@@ -8,15 +8,15 @@ import Answer from "../../components/Answer/Answer";
 const QuestionDetail = () => {
   let params = useParams();
   console.log(params.id);
-  const [getQuestion, setGetQuestion] = useState();
+  const [getQuestion, setGetQuestion] = useState({});
   const [answers, setAnswers] = useState([]);
-
+  console.log(answers);
   const getQuestionById = async () => {
     try {
       const question = await axios.get(
-        `http://localhost:8000/api/questions/singlequestion/${params.id}`
+        `https://evangadi-mongo-backend.onrender.com/api/questions/singlequestion/${params.id}`
       );
-      console.log(question?.data);
+      console.log(question);
       setGetQuestion(question?.data);
     } catch (error) {
       console.log("something went wrong", error);
@@ -26,22 +26,22 @@ const QuestionDetail = () => {
   const answerQuestion = async () => {
     try {
       const answerResponse = await axios.get(
-        `http://localhost:8000/api/answers/allanswers/${getQuestion?.questionid}`
+        `https://evangadi-mongo-backend.onrender.com/api/answers/allanswers/${params.id}`
       );
 
       console.log(answerResponse);
 
-      setAnswers(answerResponse.data?.answers);
+      setAnswers(answerResponse.data);
     } catch (error) {
       console.log("something went wrong", error);
     }
   };
-  console.log(answers);
+  // console.log(answers);
 
   useEffect(() => {
     getQuestionById();
     answerQuestion();
-  }, [getQuestion?.questionid]);
+  }, [getQuestion?.id]);
   return (
     <div className="container my-5">
       <div>
@@ -63,12 +63,12 @@ const QuestionDetail = () => {
         )}
       </div>
       {answers.map((item) => (
-        <div key={item.answerid}>
-          <Answer answer={item?.answer} username={item?.username} />
+        <div key={item._id}>
+          <Answer answer={item?.answers} username={item?.userid} />
         </div>
       ))}
 
-      <AnswerQuestion questionid={getQuestion?.questionid} />
+      <AnswerQuestion questionid={getQuestion?.id} />
     </div>
   );
 };

@@ -30,12 +30,12 @@ const addAnswer = async (req, res) => {
 const getAnswersForQuestion = async (req, res) => {
   try {
     const { questionid } = req.params;
-    // console.log(questionid);
+    // const username = req.userid.username;
+    // console.log(username);
 
     // Retrieve all answers for the question and populate the 'userid' field
-    const answers = await answer
-      .find({ questionid })
-      .populate("userid", "username");
+    const answers = await answer.find({ questionid });
+    // .populate("userid", "username");
 
     // Sending the answers as a JSON response
     res.status(200).json(answers);

@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./answerquestion.css";
 import { UserContext } from "../../context/UserContext";
 import axios from "axios";
 
-const AnswerQuestion = ({ questionid }) => {
+const AnswerQuestion = ({ id }) => {
   const [userData, setUserData] = useContext(UserContext);
   const [addAnswer, setAddAnswer] = useState("");
-  // const { questionid } = useParams();
+  const params = useParams();
   // console.log(questionid);
 
   const handleChange = (e) => {
@@ -17,11 +17,14 @@ const AnswerQuestion = ({ questionid }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`http://localhost:8000/api/answers/addanswer`, {
-        userid: userData.user?.id,
-        questionid: questionid,
-        answer: addAnswer,
-      });
+      await axios.post(
+        `https://evangadi-mongo-backend.onrender.com/api/answers/addanswer`,
+        {
+          userid: userData.user?.id,
+          questionid: params.id,
+          answer: addAnswer,
+        }
+      );
       window.location.reload(false);
     } catch (error) {
       console.log("something went wrong", error);
