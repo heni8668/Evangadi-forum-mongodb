@@ -14,7 +14,7 @@ const QuestionDetail = () => {
   const getQuestionById = async () => {
     try {
       const question = await axios.get(
-        `https://evangadi-mongo-backend.onrender.com/api/questions/singlequestion/${params.id}`
+        `https://evangadi-mongo-backend.onrender.com//api/questions/singlequestion/${params.id}`
       );
       console.log(question);
       setGetQuestion(question?.data);
@@ -26,7 +26,7 @@ const QuestionDetail = () => {
   const answerQuestion = async () => {
     try {
       const answerResponse = await axios.get(
-        `https://evangadi-mongo-backend.onrender.com/api/answers/allanswers/${params.id}`
+        `https://evangadi-mongo-backend.onrender.com//api/answers/allanswers/${params.id}`
       );
 
       console.log(answerResponse);
