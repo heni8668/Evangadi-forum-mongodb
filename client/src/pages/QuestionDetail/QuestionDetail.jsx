@@ -7,16 +7,16 @@ import Answer from "../../components/Answer/Answer";
 
 const QuestionDetail = () => {
   let params = useParams();
-  console.log(params.id);
+  // console.log(params.id);
   const [getQuestion, setGetQuestion] = useState({});
   const [answers, setAnswers] = useState([]);
-  console.log(answers);
+  // console.log(answers);
   const getQuestionById = async () => {
     try {
       const question = await axios.get(
         `https://evangadi-mongo-backend.onrender.com/api/questions/singlequestion/${params.id}`
       );
-      console.log(question);
+      // console.log(question);
       setGetQuestion(question?.data);
     } catch (error) {
       console.log("something went wrong", error);
@@ -29,7 +29,7 @@ const QuestionDetail = () => {
         `https://evangadi-mongo-backend.onrender.com/api/answers/allanswers/${params.id}`
       );
 
-      console.log(answerResponse);
+      // console.log(answerResponse);
 
       setAnswers(answerResponse.data);
     } catch (error) {

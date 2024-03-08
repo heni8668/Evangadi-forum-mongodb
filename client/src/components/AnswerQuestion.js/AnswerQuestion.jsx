@@ -8,6 +8,10 @@ const AnswerQuestion = ({ id }) => {
   const [userData, setUserData] = useContext(UserContext);
   const [addAnswer, setAddAnswer] = useState("");
   const params = useParams();
+
+  // const handleChange = (e) => {
+  //   setAddAnswer(e.target.value);
+  // };
   // console.log(questionid);
 
   const handleChange = (e) => {
