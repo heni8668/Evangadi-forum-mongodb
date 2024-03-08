@@ -64,7 +64,7 @@ const QuestionDetail = () => {
       </div>
       {answers.map((item) => (
         <div key={item._id}>
-          <Answer answer={item?.answers} username={item?.username} />
+          <Answer answer={item?.answers} username={item?.userid} />
         </div>
       ))}
 
